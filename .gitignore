@@ -1,4 +1,7 @@
 .idea/
 Sitting-Posture-Corrector-ML/
-__pycache__/
-
+**/__pycache__/
+test_main.http
+**/runs/
+weights/
+preprocessed_image.jpg
