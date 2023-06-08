@@ -94,6 +94,7 @@ async def root():
 @app.post("/fcm")
 async def fcm(body: dict, db: Session = Depends(get_db)):
     crud.update_fcm(db, body["user_id"] , body["fcm"])
+    print("FCM updated: ", body["fcm"])
     return {"message": "Update successfully!"}
 @app.post("/update_ip")
 async def update_ip(ip: str,db: Session = Depends(get_db)):
@@ -107,7 +108,7 @@ async def upload(file: UploadFile, db: Session = Depends(get_db)):
 
     image = Image.open(file.file)
     image = image.rotate(90, expand=True)
-    image.save( "D:/Dataset/ORIGINAL/TYPE1_DONE_CHI_154/285"+ "/" + str(init_millis) + ".jpg")
+    image.save( "D:/Dataset/ORIGINAL/TYPE1_DONE_CHI_154/66"+ "/" + str(init_millis) + ".jpg")
     # Step 1: Preprocess image
     preprocessed_image = od.process_image(image, od_model)
     # For debugging
